@@ -11,15 +11,29 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      tblTipoPeticion.hasMany(models.tblPeticion,{
-        foreignKey:'petTipoPetId'
-      })
+      // tblTipoPeticion.hasMany(models.tblPeticion,{
+      //   foreignKey:'petTipoPetId'
+      // })
+
+      tblTipoPeticion.associate=(models)=>{
+        tblTipoPeticion.hasMany(models.tblPeticion,{
+          foreignKey:'tipPetId',
+          as:'tblPeticion'
+        })
+      }
 
 
-      tblTipoPeticion.belongsTo(models.tblPeticion,{
-        foreignKey:'petId',
-        target_key:'petUsuId'
-      })
+      // tblTipoPeticion.belongsTo(models.tblPeticion,{
+      //   foreignKey:'petId',
+      //   target_key:'petUsuId'
+      // })
+      // tblTipoPeticion.associate=(models)=>{
+      //   tblTipoPeticion.belongsTo(models.tblPeticion,{
+      //     foreignKey:'tipPetId',
+      //     as:'tblPeticion'
+      //   })
+      // }
+
     }
   }
   tblTipoPeticion.init({

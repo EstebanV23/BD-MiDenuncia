@@ -47,17 +47,37 @@ module.exports = (sequelize, DataTypes) => {
         })
       }
 
-      tblUsuario.hasMany(models.tblPeticion,{
-        foreingkey:'petUsuId'
-      })
+      // tblUsuario.hasMany(models.tblPeticion,{
+      //   foreingkey:'petUsuId'
+      // })
 
-      tblUsuario.hasMany(models.tblReporte,{
-        foreignKey:'repUsuId'
-      })
+      tblUsuario.associate=function(models) {
+        tblUsuario.hasMany(models.tblPeticion,{
+          foreingkey:'usuId',
+          as:'tblPeticion'
+        })
+      }
+      
 
-      tblUsuario.hasMany(models.tblComentario,{
-        foreignKey:'comUsuId'
-      })
+      // tblUsuario.hasMany(models.tblReporte,{
+      //   foreignKey:'repUsuId'
+      // })
+      tblUsuario.associate=function(models) {
+        tblUsuario.hasOne(models.tblReporte,{
+          foreingkey:'usuId',
+          as:'tblreporte'
+        })
+      }
+
+      // tblUsuario.hasMany(models.tblComentario,{
+      //   foreignKey:'comUsuId'
+      // })
+      tblUsuario.associate=function(models) {
+        tblUsuario.hasOne(models.tblComentario,{
+          foreingkey:'usuId',
+          as:'tblComentario'
+        })
+      }
 
     }
 

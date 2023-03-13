@@ -11,9 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      tblTipoReporte.hasMany(models.tblReporte,{
-        foreignKey:'repTipRepId'
-      })
+      // tblTipoReporte.hasMany(models.tblReporte,{
+      //   foreignKey:'repTipRepId'
+      // })
+
+      tblTipoReporte.associate=(models)=>{
+        tblTipoReporte.hasMany(models.tblReporte,{
+          foreignKey:'tipRepId',
+          as:'repId'
+        })
+      }
     }
   }
   tblTipoReporte.init({

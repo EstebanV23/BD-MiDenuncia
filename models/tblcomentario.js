@@ -11,15 +11,27 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      tblComentario.belongsTo(models.tblUsuario,{
-        foreignKey:'usuId',
-        target_key:'comUsuId'
-      })
+      // tblComentario.belongsTo(models.tblUsuario,{
+      //   foreignKey:'usuId',
+      //   target_key:'comUsuId'
+      // })
+      tblComentario.associate=(models)=>{
+        tblComentario.belongsTo(models.tblUsuario,{
+          foreignKey:'comId',
+          as:'tblUsuario'
+        })
+      }
+      // tblComentario.belongsTo(models.tblPeticion,{
+      //   foreignKey:'petId',
+      //   target_key:'comPetId'
+      // })
 
-      tblComentario.belongsTo(models.tblPeticion,{
-        foreignKey:'petId',
-        target_key:'comPetId'
-      })
+      tblComentario.associate=(models)=>{
+        tblComentario.belongsTo(models.tblPeticion,{
+          foreignKey:'comId',
+          as:'tblPeticion'
+        })
+      }
     }
   }
   tblComentario.init({

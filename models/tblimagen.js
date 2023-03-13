@@ -11,10 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      tblImagen.belongsTo(models.tblPeticion,{
-        foreignKey:'petId',
-        target_key:'imgPetId'
-      })
+      // tblImagen.belongsTo(models.tblPeticion,{
+      //   foreignKey:'petId',
+      //   target_key:'imgPetId'
+      // })
+
+      tblImagen.associate=(models)=>{
+        tblImagen.belongsTo(models.tblPeticion,{
+          foreignKey:'imgId',
+          as:'tblPeticion'
+        })
+      }
     }
   }
   tblImagen.init({

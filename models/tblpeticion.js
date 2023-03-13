@@ -11,23 +11,50 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      tblPeticion.belongsTo(models.tblTipoPeticion,{
-        foreignKey:'tipPetId',
-        target_key:'petTipoPetId'
-      })
+      // tblPeticion.belongsTo(models.tblTipoPeticion,{
+      //   foreignKey:'tipPetId',
+      //   target_key:'petTipoPetId'
+      // })
 
-      tblPeticion.hasMany(models.tblPeticion,{
-        foreignKey:'repPetId'
-      })
+      tblPeticion.associate=(models)=>{
+        tblPeticion.belongsTo(models.tblTipoPeticion,{
+          foreignKey:'petId',
+          as:'tblTipoPeticion'
+        })
+      }
 
-      tblPeticion.hasMany(models.tblComentario,{
-        foreignKey:'comPetId'
-      })
+      // tblPeticion.hasMany(models.tblPeticion,{
+      //   foreignKey:'repPetId'
+      // })
+      tblPeticion.associate=(models)=>{
+        tblPeticion.belongsTo(models.tblPeticion,{
+          foreignKey:'petId',
+          as:'tblPeticion'
+        })
+      }
 
-      tblPeticion.hasMany(models.tblImagen,{
-        foreignKey:'imgPetId'
+      // tblPeticion.hasMany(models.tblComentario,{
+      //   foreignKey:'comPetId'
+      // })
+      tblPeticion.associate=(models)=>{
+        tblPeticion.belongsTo(models.tblComentario,{
+          foreignKey:'petId',
+          as:'tblComentario'
+        })
+      }
 
-      })
+      // tblPeticion.hasMany(models.tblImagen,{
+      //   foreignKey:'imgPetId'
+
+      // })
+
+      tblPeticion.associate=(models)=>{
+        tblPeticion.belongsTo(models.tblImagen,{
+          foreignKey:'petId',
+          as:'tblImagen'
+        })
+      }
+      
     }
   }
   tblPeticion.init({

@@ -11,22 +11,41 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      tblReporte.belongsTo(models.tblUsuario,{
-        foreignKey:'usuId',
-        target_key:'repUsuId'
-      })
+      // tblReporte.belongsTo(models.tblUsuario,{
+      //   foreignKey:'usuId',
+      //   target_key:'repUsuId'
+      // })
+      tblReporte.associate=(models)=>{
+        tblReporte.belongsTo(models.tblUsuario,{
+          foreignKey:'repId',
+          as:'tblUsuario'
+        })
+      }
 
 
-      tblReporte.belongsTo(models.tblTipoReporte,{
-        foreignKey:'tipRepId',
-        target_key:'repTipRepId'
-      })
+      // tblReporte.belongsTo(models.tblTipoReporte,{
+      //   foreignKey:'tipRepId',
+      //   target_key:'repTipRepId'
+      // })
+      tblReporte.associate=(models)=>{
+        tblReporte.belongsTo(models.tblTipoReporte,{
+          foreignKey:'repId',
+          as:'tblTipoReporte'
+        })
+      }
 
-      tblReporte.belongsTo(models.tblPeticion,{
-        foreignKey:'petId',
-        target_key:'repPetId'
+      // tblReporte.belongsTo(models.tblPeticion,{
+      //   foreignKey:'petId',
+      //   target_key:'repPetId'
 
-      })
+      // })
+
+      tblReporte.associate=(models)=>{
+        tblReporte.belongsTo(models.tblPeticion,{
+          foreignKey:'repId',
+          as:'tblPeticion'
+        })
+      }
     }
   }
   tblReporte.init({
