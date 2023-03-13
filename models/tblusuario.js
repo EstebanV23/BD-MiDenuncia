@@ -17,23 +17,27 @@ module.exports = (sequelize, DataTypes) => {
       //   target_Key:'usuDocId'
       // })
 
-      tblUsuario.associations=(models)=>{
-        tblUsuario.belongsTo(models.tblDocumento,{
-          foreingkey:'usuId',
-          as:'tblDocumento'
-        })
-      }
+      // tblUsuario.associations=(models)=>{
+      //   tblUsuario.belongsTo(models.tblDocumento,{
+      //     foreingkey:'usuId',
+      //     as:'tblDocumento'
+      //   })
+      // }
+      tblUsuario.belongsTo(models.tblDocumento,{
+        foreignKey:'usuDocId',
 
-      // tblUsuario.belongsTo(models.tblRol,{
-      //   foreingkey:'rolId',
-      //   target_Key:'usuRolId'
-      // })
-      tblUsuario.associations=(models)=>{
-        tblUsuario.belongsTo(models.tblRol,{
-          foreingkey:'usuId',
-          as:'tblRol'
-        })
-      }
+      })
+
+      tblUsuario.belongsTo(models.tblRol,{
+        foreignKey: 'usuRolId',
+       
+      })
+      // tblUsuario.associations=(models)=>{
+      //   tblUsuario.belongsTo(models.tblRol,{
+      //     foreingkey:'usuRolId',
+      //     as:'tblRol'
+      //   })
+      // }
 
 
       // tblUsuario.hasOne(models.tblCalificacion,{
@@ -42,21 +46,21 @@ module.exports = (sequelize, DataTypes) => {
 
       tblUsuario.associate=function(models) {
         tblUsuario.hasOne(models.tblCalificacion,{
-          foreingkey:'usuId',
+          foreignKey:'usuId',
           as:'tblCalificacion'
         })
       }
 
-      // tblUsuario.hasMany(models.tblPeticion,{
-      //   foreingkey:'petUsuId'
-      // })
+      tblUsuario.hasMany(models.tblPeticion,{
+        foreignKey:'petUsuId'
+      })
 
-      tblUsuario.associate=function(models) {
-        tblUsuario.hasMany(models.tblPeticion,{
-          foreingkey:'usuId',
-          as:'tblPeticion'
-        })
-      }
+      // tblUsuario.associate=function(models) {
+      //   tblUsuario.hasMany(models.tblPeticion,{
+      //     foreingkey:'usuId',
+      //     as:'tblPeticion'
+      //   })
+      // }
       
 
       // tblUsuario.hasMany(models.tblReporte,{
@@ -64,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
       // })
       tblUsuario.associate=function(models) {
         tblUsuario.hasOne(models.tblReporte,{
-          foreingkey:'usuId',
+          foreignkey:'usuId',
           as:'tblreporte'
         })
       }
@@ -74,7 +78,7 @@ module.exports = (sequelize, DataTypes) => {
       // })
       tblUsuario.associate=function(models) {
         tblUsuario.hasOne(models.tblComentario,{
-          foreingkey:'usuId',
+          foreignkey:'usuId',
           as:'tblComentario'
         })
       }

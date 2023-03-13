@@ -11,16 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // tblRol.hasOne(models.tblUsuario,{
-      //   foreignKey:'usuRolId'
-      // })
+      tblRol.hasOne(models.tblUsuario,{
+        foreignKey:'usuRolId',
+      })
 
-      tblRol.associate=(models)=>{
-        tblRol.hasOne(tblRol.tblUsuario,{
-          foreignKey:'usuRolId',
-          as:'tblUsuario'
-        })
-      }
+      // tblRol.associate=(models)=>{
+      //   tblRol.hasOne(tblRol.tblUsuario,{
+      //     foreignKey:'usuRolId',
+      //     as:'tblUsuario'
+      //   })
+      // }
     }
   }
   tblRol.init({

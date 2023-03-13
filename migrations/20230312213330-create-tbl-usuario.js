@@ -49,7 +49,7 @@ module.exports = {
       usuRolId: {
         type: Sequelize.INTEGER(1),
         references:{
-          model:'tblrols',
+          model:'tblRols',
           key:'rolId'
         }
        

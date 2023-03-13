@@ -16,12 +16,12 @@ module.exports = (sequelize, DataTypes) => {
       //   target_key:'imgPetId'
       // })
 
-      tblImagen.associate=(models)=>{
+      
         tblImagen.belongsTo(models.tblPeticion,{
-          foreignKey:'imgId',
-          as:'tblPeticion'
+          foreignKey:'imgPetId',
+         
         })
-      }
+      
     }
   }
   tblImagen.init({

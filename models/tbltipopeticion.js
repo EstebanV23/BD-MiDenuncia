@@ -15,12 +15,17 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey:'petTipoPetId'
       // })
 
-      tblTipoPeticion.associate=(models)=>{
-        tblTipoPeticion.hasMany(models.tblPeticion,{
-          foreignKey:'tipPetId',
-          as:'tblPeticion'
-        })
-      }
+      // tblTipoPeticion.associate=(models)=>{
+      //   tblTipoPeticion.hasMany(models.tblPeticion,{
+      //     foreignKey:'tipPetId',
+      //     as:'tblPeticion'
+      //   })
+      // }
+
+      tblTipoPeticion.hasMany(models.tblPeticion,{
+        foreignKey:'petTipoPetId',
+        
+      })
 
 
       // tblTipoPeticion.belongsTo(models.tblPeticion,{

@@ -15,12 +15,15 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey:'usuDocId'
       // })
 
-      tblDocumento.associate=(models)=>{
-        tblDocumento.hasOne(models.tblUsuario,{
-          foreignKey:'usuId',
-          as:'tblUsuario'
-        })
-      }
+      // tblDocumento.associate=(models)=>{
+      //   tblDocumento.hasOne(models.tblUsuario,{
+      //     foreignKey:'usuId',
+      //     as:'tblUsuario'
+      //   })
+      // }
+      tblDocumento.hasOne(models.tblUsuario,{
+        foreignKey:'usuDocId',
+      })
     }
   }
   tblDocumento.init({

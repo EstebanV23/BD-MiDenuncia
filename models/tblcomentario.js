@@ -26,12 +26,12 @@ module.exports = (sequelize, DataTypes) => {
       //   target_key:'comPetId'
       // })
 
-      tblComentario.associate=(models)=>{
+     
         tblComentario.belongsTo(models.tblPeticion,{
-          foreignKey:'comId',
-          as:'tblPeticion'
+          foreignKey:'comPetId',
+         
         })
-      }
+      
     }
   }
   tblComentario.init({

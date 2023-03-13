@@ -6,14 +6,14 @@ const sequelize=require('sequelize')
 
 
 const modeloCalificacion=require('./models').tblCalificacion
-const modeloComentario=require('./models').tblcomentario
+const modeloComentario=require('./models').tblComentario
 const modeloDocumento=require('./models').tblDocumento
-const modeloImagen=require('./models').tblimagen
-const modeloTipoPeticion=require('./models').tbltipopeticion
+const modeloImagen=require('./models').tblImagen
+const modeloTipoPeticion=require('./models').tblTipoPeticion
 const modeloPeticion=require('./models').tblPeticion
 const modeloRol=require('./models').tblRol
-const modeloReporte=require('./models').tblreporte
-const modeloTipoReporte=require('./models').tbltiporeporte
+const modeloReporte=require('./models').tblReporte
+const modeloTipoReporte=require('./models').tblTiporeporte
 const modeloUsuario=require('./models').tblUsuario
 
 // app.use('/',(req,res)=>{
@@ -42,7 +42,11 @@ modeloDocumento.create(req.body)
 
 
 app.get('/show',(req,res)=>{
-    modeloUsuario.findAll()
+    modeloPeticion.findAll(
+      {
+        include:[modeloTipoPeticion]}
+
+    )
     //  {
     //   include:[{model:modeloDocumento}]}
       //attributes: { exclude: ['tblDocumentoDocId','tblRolRolId'] }}
