@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey:'usuId',
       //   target_key:'comUsuId'
       // })
-      tblComentario.associate=(models)=>{
+    
         tblComentario.belongsTo(models.tblUsuario,{
-          foreignKey:'comId',
-          as:'tblUsuario'
+          foreignKey:'comUsuId',
+         
         })
-      }
+      
       // tblComentario.belongsTo(models.tblPeticion,{
       //   foreignKey:'petId',
       //   target_key:'comPetId'

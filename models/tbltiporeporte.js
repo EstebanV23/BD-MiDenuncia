@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey:'repTipRepId'
       // })
 
-      tblTipoReporte.associate=(models)=>{
+      
         tblTipoReporte.hasMany(models.tblReporte,{
-          foreignKey:'tipRepId',
-          as:'repId'
+          foreignKey:'repTipRepId',
+          
         })
-      }
+      
     }
   }
   tblTipoReporte.init({

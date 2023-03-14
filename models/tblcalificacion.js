@@ -16,12 +16,12 @@ module.exports = (sequelize, DataTypes) => {
       //   target_key:'calUsuId'
       // })
 
-      tblCalificacion.associate=(models)=>{
+     
         tblCalificacion.belongsTo(models.tblUsuario,{
           foreignKey:'usuId',
-          as:'tblUsuario'
+          
         })
-      }
+      
     }
   }
   tblCalificacion.init({

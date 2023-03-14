@@ -15,37 +15,29 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey:'usuId',
       //   target_key:'repUsuId'
       // })
-      tblReporte.associate=(models)=>{
+      
         tblReporte.belongsTo(models.tblUsuario,{
-          foreignKey:'repId',
-          as:'tblUsuario'
+          foreignKey:'repUsuId',
+         
         })
-      }
+      
 
 
-      // tblReporte.belongsTo(models.tblTipoReporte,{
-      //   foreignKey:'tipRepId',
-      //   target_key:'repTipRepId'
-      // })
-      tblReporte.associate=(models)=>{
+   
+     
         tblReporte.belongsTo(models.tblTipoReporte,{
-          foreignKey:'repId',
-          as:'tblTipoReporte'
+          foreignKey:'repTipRepId',
+         
         })
-      }
+      
 
-      // tblReporte.belongsTo(models.tblPeticion,{
-      //   foreignKey:'petId',
-      //   target_key:'repPetId'
-
-      // })
-
-      tblReporte.associate=(models)=>{
+    
+     
         tblReporte.belongsTo(models.tblPeticion,{
-          foreignKey:'repId',
-          as:'tblPeticion'
+          foreignKey:'repPetId',
+          
         })
-      }
+      
     }
   }
   tblReporte.init({

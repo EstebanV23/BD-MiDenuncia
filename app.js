@@ -44,7 +44,7 @@ modeloDocumento.create(req.body)
 app.get('/show',(req,res)=>{
     modeloPeticion.findAll(
       {
-        include:[modeloTipoPeticion]}
+        include:[modeloTipoPeticion,modeloImagen,modeloReporte,modeloTipoReporte]}
 
     )
     //  {

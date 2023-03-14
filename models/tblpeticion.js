@@ -11,10 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // tblPeticion.belongsTo(models.tblTipoPeticion,{
-      //   foreignKey:'tipPetId',
-      //   target_key:'petTipoPetId'
-      // })
+      
 
      
         tblPeticion.belongsTo(models.tblTipoPeticion,{
@@ -24,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       
 
      
-        tblPeticion.belongsTo(models.tblComentario,{
+        tblPeticion.hasMany(models.tblComentario,{
           foreignKey:'comPetId',
           
         })

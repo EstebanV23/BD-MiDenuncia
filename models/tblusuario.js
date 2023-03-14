@@ -32,24 +32,14 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'usuRolId',
        
       })
-      // tblUsuario.associations=(models)=>{
-      //   tblUsuario.belongsTo(models.tblRol,{
-      //     foreingkey:'usuRolId',
-      //     as:'tblRol'
-      //   })
-      // }
+    
 
-
-      // tblUsuario.hasOne(models.tblCalificacion,{
-      //   foreingkey:'calUsuId'
-      // })
-
-      tblUsuario.associate=function(models) {
+     
         tblUsuario.hasOne(models.tblCalificacion,{
-          foreignKey:'usuId',
-          as:'tblCalificacion'
+          foreignKey:'calUsuId',
+         
         })
-      }
+      
 
       tblUsuario.hasMany(models.tblPeticion,{
         foreignKey:'petUsuId'
@@ -66,22 +56,22 @@ module.exports = (sequelize, DataTypes) => {
       // tblUsuario.hasMany(models.tblReporte,{
       //   foreignKey:'repUsuId'
       // })
-      tblUsuario.associate=function(models) {
+     
         tblUsuario.hasOne(models.tblReporte,{
-          foreignkey:'usuId',
-          as:'tblreporte'
+          foreignKey:'repUsuId',
+          
         })
-      }
+      
 
       // tblUsuario.hasMany(models.tblComentario,{
       //   foreignKey:'comUsuId'
       // })
-      tblUsuario.associate=function(models) {
-        tblUsuario.hasOne(models.tblComentario,{
-          foreignkey:'usuId',
-          as:'tblComentario'
+      
+        tblUsuario.hasMany(models.tblComentario,{
+          foreignKey:'comUsuId',
+         
         })
-      }
+      
 
     }
 

@@ -10,17 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-      // tblTipoPeticion.hasMany(models.tblPeticion,{
-      //   foreignKey:'petTipoPetId'
-      // })
-
-      // tblTipoPeticion.associate=(models)=>{
-      //   tblTipoPeticion.hasMany(models.tblPeticion,{
-      //     foreignKey:'tipPetId',
-      //     as:'tblPeticion'
-      //   })
-      // }
+      
 
       tblTipoPeticion.hasMany(models.tblPeticion,{
         foreignKey:'petTipoPetId',
@@ -28,22 +18,13 @@ module.exports = (sequelize, DataTypes) => {
       })
 
 
-      // tblTipoPeticion.belongsTo(models.tblPeticion,{
-      //   foreignKey:'petId',
-      //   target_key:'petUsuId'
-      // })
-      // tblTipoPeticion.associate=(models)=>{
-      //   tblTipoPeticion.belongsTo(models.tblPeticion,{
-      //     foreignKey:'tipPetId',
-      //     as:'tblPeticion'
-      //   })
-      // }
+     
 
     }
   }
   tblTipoPeticion.init({
-    petId: {
-      type: DataTypes.INTEGER(5),
+    tipPetId: {
+      type: DataTypes.TINYINT(1),
       primaryKey: true,
       autoIncrement: true
     },
