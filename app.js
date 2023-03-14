@@ -70,7 +70,8 @@ app.use(morgan('tiny'))
 app.use(bodyparser.json())
 app.use('/', router)
 app.get('/',(req,res)=>{
-  request.sendFile(__dirname + "./index.html")
+  console.log(__dirname)
+  res.sendFile(__dirname + "/public/index.html")
 })
 
 module.exports = app;
