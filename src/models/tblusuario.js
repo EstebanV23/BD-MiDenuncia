@@ -83,7 +83,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    usuAli: DataTypes.STRING,unique: true,
+    usuAli: DataTypes.STRING,
     usuApe: DataTypes.STRING,
     usuEma: DataTypes.STRING,
     usuPas: DataTypes.STRING,
