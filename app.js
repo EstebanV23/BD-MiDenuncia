@@ -69,6 +69,9 @@ const bodyparser = require('body-parser')
 app.use(morgan('tiny'))
 app.use(bodyparser.json())
 app.use('/', router)
+app.get('/',(req,res)=>{
+  request.sendFile(__dirname + "./index.html")
+})
 
 module.exports = app;
 
