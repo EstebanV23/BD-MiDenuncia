@@ -5,6 +5,7 @@
     "database": "railway",
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
+    "port":7711,
     "dialectOptions": {
       "connectTimeout": 10000,
       "ssl": {
@@ -19,6 +20,7 @@
     "database": "railway",
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
+    "port":7711,
     "dialectOptions": {
       "connectTimeout": 10000,
       "ssl": {
@@ -33,6 +35,7 @@
     "database": "railway",
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
+    "port":7711,
     "dialectOptions": {
       "connectTimeout": 10000,
       "ssl": {
