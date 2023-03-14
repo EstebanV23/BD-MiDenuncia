@@ -8,7 +8,7 @@
     "dialectOptions": {
       "connectTimeout": 10000,
       "ssl": {
-        "rejectUnauthorized": true
+        "rejectUnauthorized": false
       }
     }
     
@@ -22,7 +22,7 @@
     "dialectOptions": {
       "connectTimeout": 10000,
       "ssl": {
-        "rejectUnauthorized": true
+        "rejectUnauthorized": false
       }
     }
     
@@ -36,7 +36,7 @@
     "dialectOptions": {
       "connectTimeout": 10000,
       "ssl": {
-        "rejectUnauthorized": true
+        "rejectUnauthorized": false
       }
     }
    
