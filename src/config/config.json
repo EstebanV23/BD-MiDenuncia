@@ -4,20 +4,29 @@
     "password":"QXxfregpPEg2V0cgbBPS",
     "database": "railway",
     "host": "containers-us-west-198.railway.app",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectOptions": {
+      "connectTimeout": 10000
+    }
   },
   "test": {
     "username": "root",
     "password":"QXxfregpPEg2V0cgbBPS",
     "database": "railway",
     "host": "containers-us-west-198.railway.app",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectOptions": {
+      "connectTimeout": 10000
+    }
   },
   "production": {
     "username": "root",
     "password":"QXxfregpPEg2V0cgbBPS",
     "database": "railway",
     "host": "containers-us-west-198.railway.app",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectOptions": {
+      "connectTimeout": 120000
+    }
   }
 }
