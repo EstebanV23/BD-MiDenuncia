@@ -6,11 +6,12 @@
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
-      "connectTimeout": 10000
-    },
-    "ssl": {
-      "rejectUnauthorized": true
+      "connectTimeout": 10000,
+      "ssl": {
+        "rejectUnauthorized": true
+      }
     }
+    
   },
   "test": {
     "username": "root",
@@ -19,11 +20,12 @@
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
-      "connectTimeout": 10000
-    },
-    "ssl": {
-      "rejectUnauthorized": true
+      "connectTimeout": 10000,
+      "ssl": {
+        "rejectUnauthorized": true
+      }
     }
+    
   },
   "production": {
     "username": "root",
@@ -32,10 +34,11 @@
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
-      "connectTimeout": 10000
-    },
-    "ssl": {
-      "rejectUnauthorized": true
+      "connectTimeout": 10000,
+      "ssl": {
+        "rejectUnauthorized": true
+      }
     }
+   
   }
 }
