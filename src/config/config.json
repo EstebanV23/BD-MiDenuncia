@@ -7,6 +7,9 @@
     "dialect": "mysql",
     "dialectOptions": {
       "connectTimeout": 10000
+    },
+    "ssl": {
+      "rejectUnauthorized": true
     }
   },
   "test": {
@@ -17,6 +20,9 @@
     "dialect": "mysql",
     "dialectOptions": {
       "connectTimeout": 10000
+    },
+    "ssl": {
+      "rejectUnauthorized": true
     }
   },
   "production": {
@@ -26,7 +32,10 @@
     "host": "containers-us-west-198.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
-      "connectTimeout": 120000
+      "connectTimeout": 10000
+    },
+    "ssl": {
+      "rejectUnauthorized": true
     }
   }
 }
